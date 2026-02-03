@@ -77,10 +77,16 @@ class _SecondScreenState extends State<SecondScreen> {
                 ],
               ),
               SizedBox(height: 24,),
-              MaterialButton(
+             MaterialButton(
               color: widget.color,
-              onPressed: (){},
-              child: Text('Go to Second Screen'),)
+              onPressed: (){
+                Navigator.of(context).push(MaterialPageRoute(
+                  builder: (_)=> BlocProvider.value(
+                    // value: CounterCubit(),
+                    value: BlocProvider.of<CounterCubit>(context),
+                    child: SecondScreen(title: 'Third Screen', color: Colors.greenAccent))));
+              },
+              child: Text('Go to Third Screen'),)
 
             ],
           ),

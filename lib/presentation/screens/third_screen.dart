@@ -1,17 +1,16 @@
 import 'package:bloc_practice/logic/cubit/counter_cubit.dart';
-import 'package:bloc_practice/presentation/screens/second_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-class HomeScreen extends StatefulWidget {
-  const HomeScreen({super.key, required this.title, required this.color});
+class ThirdScreen extends StatefulWidget {
+  const ThirdScreen({super.key, required this.title, required this.color});
   final String title;
   final Color color;
   @override
-  State<HomeScreen> createState() => _HomeScreenState();
+  State<ThirdScreen> createState() => _ThirdScreenState();
 }
 
-class _HomeScreenState extends State<HomeScreen> {
+class _ThirdScreenState extends State<ThirdScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -78,32 +77,15 @@ class _HomeScreenState extends State<HomeScreen> {
                 ],
               ),
               SizedBox(height: 24,),
-              MaterialButton(
-              color: widget.color,
-              onPressed: (){
-                // Navigator.of(context).push(
-                //   MaterialPageRoute(
-                //   builder: (_)=> BlocProvider.value(
-                //     // value: CounterCubit(),
-                //     value: BlocProvider.of<CounterCubit>(context),
-                //     child: SecondScreen(title: 'Second Screen', color: Colors.redAccent))));
-                 Navigator.of(context).pushNamed( '/second');
-               
-              },
-              child: Text('Go to Second Screen'),),
-              SizedBox(height: 24,),
-              MaterialButton(
-              child: Text('Go to third screen'),
-              color: widget.color,
-              onPressed: (){
-                 Navigator.of(context).pushNamed( '/third');
-               },
+              // MaterialButton(
+              // color: widget.color,
+              // onPressed: (){},
+              // child: Text('Go to 3rd Screen'),)
 
-          )],
+            ],
           ),
         ),
       
     );
   }
 }
- 
